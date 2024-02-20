@@ -1,0 +1,55 @@
+body, .card {
+    background: linear-gradient(to right, #673ab7, #2196f3); /* Degradado de violeta a azul */
+    color: #fff;
+}
+.card {
+    border: 2px solid #fff; /* Delineado más marcado para los formularios */
+}
+.form-group {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.form-control {
+    background-color: #6c757d; /* Color más claro para los campos de entrada */
+    border-color: #fff; /* Color más claro para el borde */
+    color: #fff;
+    height: 30px;
+    width: 50%;
+}
+.btn-primary, .btn-danger, .btn-delete{
+    background: linear-gradient(to right, #FFE53B, #00FFFF); /* Degradado de amarillo a rojo para los botones */
+    margin-bottom: 20px;
+    width: 100px;
+    height: 30px;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    border: none; /* Elimina el borde del botón */
+}
+.table {
+    color: #fff;
+}
+.table-responsive {
+    max-height: 200px;
+    overflow-y: auto;
+}
+h2 {
+    text-align: center;
+}
+label {
+    color: #adb5bd; /* Color más claro para los labels */
+}
+.btn-delete {
+    background: linear-gradient(to right, #00E1FD, #FC007A); /* Degradado de amarillo a rojo para el botón de eliminar */
+    margin-bottom: 20px;
+    width: 100px;
+    height: 30px;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}

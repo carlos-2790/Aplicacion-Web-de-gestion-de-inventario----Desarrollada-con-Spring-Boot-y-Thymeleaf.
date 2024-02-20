@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Editar Producto</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/estilos.css">
+</head>
+<body>
+<div class="container">
+    <div class="card">
+        <div class="card-header">
+            <h2 class="text-center">Editar Producto</h2>
+        </div>
+        <div class="card-body">
+            <form th:action="@{/producto/actualizar/{id}(id=${producto.id})}" th:object="${producto}" method="post">
+                <div class="form-group">
+                    <label for="nombre">Nombre:</label>
+                    <input type="text" id="nombre" th:field="*{nombre}" class="form-control" />
+                </div>
+                <div class="form-group">
+                    <label for="cantidad">Cantidad:</label>
+                    <input type="number" id="cantidad" th:field="*{cantidad}" class="form-control" />
+                </div>
+                <div class="form-group">
+                    <label for="precioUnitario">Precio Unitario:</label>
+                    <input type="number" step="0.01" id="precioUnitario" th:field="*{precioUnitario}" class="form-control" />
+                </div>
+                <button type="submit" class="btn btn-primary">Actualizar</button>
+            </form>
+        </div>
+    </div>
+    <a href="/productos" class="btn btn-secondary mt-3">Volver a la lista de productos</a>
+</div>
+</body>
+</html>

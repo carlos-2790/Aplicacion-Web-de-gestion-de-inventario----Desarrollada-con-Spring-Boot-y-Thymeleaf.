@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Registro</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <style>
+        body {
+            background-color: #fff; /* Cambia el color de fondo a blanco */
+            color: #000; /* Cambia el color del texto a negro */
+            font-family: Arial, sans-serif; /* Cambia la fuente a Arial */
+        }
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start; /* Alinea los elementos al inicio del eje transversal */
+        }
+        .form-control, .form-control:focus {
+            background-color: #fff; /* Cambia el color de fondo de los campos de entrada a blanco */
+            border-color: #000; /* Cambia el color del borde de los campos de entrada a negro */
+            color: #000; /* Cambia el color del texto de los campos de entrada a negro */
+            height: 30px; /* Ajusta la altura de los campos de entrada */
+            width: 100%; /* Ajusta el ancho de los campos de entrada al 100% */
+            border-radius: 0; /* Elimina los bordes redondeados de los campos de entrada */
+        }
+        .btn-primary {
+            background-color: #000; /* Cambia el color de fondo del botón a negro */
+            border: none; /* Elimina el borde del botón */
+            color: #fff; /* Cambia el color del texto del botón a blanco */
+            border-radius: 0; /* Elimina los bordes redondeados del botón */
+            width: 100%; /* Ajusta el ancho del botón al 100% */
+            height: 30px; /* Ajusta la altura del botón */
+        }
+        label {
+            color: #000; /* Cambia el color del texto de los labels a negro */
+            font-weight: bold; /* Hace que el texto de los labels sea en negrita */
+        }
+        .card-body {
+            background-color: #fff; /* Cambia el color de fondo del formulario a blanco */
+        }
+    </style>
+</head>
+<body>
+<div class="container py-5">
+    <div class="row">
+        <div class="col-md-12">
+            <h2 class="text-center text-white mb-4">Formulario de Registro</h2>
+            <div class="row">
+                <div class="col-md-6 mx-auto">
+                    <div class="card rounded-0">
+                        <div class="card-header">
+                            <h3 class="mb-0">Registro</h3>
+                        </div>
+                        <div class="card-body">
+                            <form action="#" th:action="@{/registrar}" method="post" th:object="${usuario}" class="form">
+                                <div class="form-group">
+                                    <label for="nombre">Nombre:</label>
+                                    <input type="text" class="form-control" id="nombre" th:field="*{nombre}" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="correo">Correo:</label>
+                                    <input type="email" class="form-control" id="correo" th:field="*{correo}" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="contrasena">Contraseña:</label>
+                                    <input type="password" class="form-control" id="contrasena" th:field="*{contrasena}" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="rol">Rol:</label>
+                                    <select class="form-control" id="rol" th:field="*{rol.nombre}">
+                                        <option th:each="rol : ${roles}" th:value="${rol.nombre}" th:text="${rol.nombre}"></option>
+                                    </select>
+                                </div>
+                                <button type="submit" class="btn btn-primary float-right">Registrar</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
